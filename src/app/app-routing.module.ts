@@ -9,10 +9,10 @@ import { ServicePageComponent } from './service-page/service-page.component';
 
 const routes: Routes = [
 {path:"", component: HomePageComponent},
-{path:"about", component: AboutPageComponent},
-{path:"contact", component: ContactPageComponent},
-{path:"gallery", component: GalleryPageComponent},
-{path:"service", component: ServicePageComponent}
+{path:"app-about-page", component: AboutPageComponent},
+{path:"app-contact-page", component: ContactPageComponent},
+{path:"app-gallery-page", component: GalleryPageComponent},
+{path:"app-service-page", component: ServicePageComponent}
 ];
 
 @NgModule({
