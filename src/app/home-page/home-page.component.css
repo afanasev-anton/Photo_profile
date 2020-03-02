@@ -27,3 +27,21 @@ button:hover{
 	z-index: 1;
 	margin-top: 330px;
 }
+.fbicon{
+	color: rgba(255, 255, 255, 1.0);
+}
+.twicon{
+	color: rgba(255, 255, 255, 1.0);
+}
+.instaicon{
+	color: rgba(255, 255, 255, 1.0);
+}
+.fbicon:hover{
+	color: rgba(255, 255, 255, 0.2);
+}
+.instaicon:hover{
+	color: rgba(255, 255, 255, 0.2);
+}
+.twicon:hover{
+	color: rgba(255, 255, 255, 0.2);
+}
