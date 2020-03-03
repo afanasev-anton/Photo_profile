@@ -1,5 +1,17 @@
-<div id="full-size">
-	<div class="img-box" *ngIf="photo">
-		<img src="photo.pic">
+<div id="full-size" *ngIf="photo">
+	<!-- class="img-box"-->
+	<div>
+		<div class="row mx-0">
+			<div class="img-box col">
+				<img src="photo.pic">
+			</div>
+			<div class="col text-white">
+				<p>Location:<br>
+				{{photo.location}}</p>
+				<p>Date:<br>
+				{{getDate(photo)}}</p>
+			</div>
+		</div>
+		
 	</div>	
 </div>

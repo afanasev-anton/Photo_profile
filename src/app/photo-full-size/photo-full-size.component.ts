@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { GalleryPageComponent } from './../gallery-page/gallery-page.component';
+import { ActivatedRoute} from '@angular/router';
+import { GalleryPageComponent } from '../gallery-page/gallery-page.component';
 import {pictures} from '../pictures';
 
 
@@ -12,8 +12,7 @@ import {pictures} from '../pictures';
 export class PhotoFullSizeComponent implements OnInit {
 	photo;
 
-  constructor(private gall:GalleryPageComponent, private route: ActivatedRoute) {
-  	console.log(gall.listOfPictures);
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -21,5 +20,16 @@ export class PhotoFullSizeComponent implements OnInit {
       this.photo = pictures[+params.get('photoId')];
     });
   }
-//this.gall.listOfPictures
+//this.gall.listOfPictures: switch from pictures to this array
+
+	getDate(obj){
+    var str = "";
+    var d = new Date(obj.takenDate);
+    var options = {
+      year: "numeric",
+      month: "2-digit",
+      day: "numeric"
+    };
+    return d.toLocaleString('de-AT',options);
+  }
 }

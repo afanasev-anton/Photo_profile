@@ -4,12 +4,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/*padding: 20% 20% 20% 20%;*/
 }
 
 .img-box {
-	height: 80vh;	
-	background-color: #00AECC;
+	height: 80vh;
 }
 
 .img-box img {
