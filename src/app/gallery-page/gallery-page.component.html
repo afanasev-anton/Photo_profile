@@ -1,10 +1,11 @@
 <navbar></navbar>
-	<div class="container">
-		<div class="row" *ngFor="let itm of listOfPictures; index as photoId">
-			<p>{{itm.takenDate}}</p>
-			<a [routerLink]="['/photos', photoId]">{{itm.pic}}</a>
+	<div class="container fluid">
+		<div class="row">       <!-- *ngFor="let itm of listOfPictures; index as photoId" -->
+			<div class="col-lg-4 col-md-5 col-sm-10 mt-4 galleryimg" width="304" height="236" *ngFor="let itm of listOfPictures; index as photoId" >
+			<img src="{{itm.pic}}" class="img-thumbnail poster">
+			</div>
 		</div>
 	</div>
-	<!--the path for Full Size Picture: 'photos/:photoID' -->
+	<!--the path for Full Size Picture: 'photos/:photoID' <a [routerLink]="['/photos', photoId]">{{itm.pic}}</a> -->
 	
 <app-footer></app-footer>
