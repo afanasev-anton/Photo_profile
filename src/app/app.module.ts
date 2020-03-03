@@ -11,6 +11,7 @@ import { ServicePageComponent } from './service-page/service-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PhotoFullSizeComponent } from './photo-full-size/photo-full-size.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     GalleryPageComponent,
     ServicePageComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PhotoFullSizeComponent
   ],
   imports: [
     BrowserModule,
