@@ -1,6 +1,9 @@
 <div id="full-size" *ngIf="photo">
-	<!-- class="img-box"-->
-	
+	<div class="prev-btn">
+		<a [routerLink]="['/photos', getIndexP(photo)]" class="text-white">
+			<i class='fas fa-arrow-alt-circle-left' style="font-size:36px"></i>
+		</a>
+	</div>
 		<div class="img-frame row mx-0">
 			<div class="col-12 col-md-9">
 				<button type="button" class="text-white btn close-btn" routerLink="/app-gallery-page">
@@ -18,5 +21,10 @@
 					{{getDate(photo)}}</h5>
 				</div>				
 			</div>
-		</div>	
+		</div>
+	<div class="next-btn">
+		<a [routerLink]="['/photos', getIndexN(photo)]" class="text-white">
+			<i class='fas fa-arrow-alt-circle-right' style="font-size:36px"></i>
+		</a>
+	</div>
 </div>

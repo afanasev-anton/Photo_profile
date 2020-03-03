@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {pictures} from '../pictures';
 
+
 @Component({
   selector: 'app-gallery-page',
   templateUrl: './gallery-page.component.html',
@@ -58,7 +59,10 @@ export class GalleryPageComponent implements OnInit {
       }
     }
   }
-
+  getlistOfPictures(){
+    return this.listOfPictures;
+  }
 // PLACEHOLDER FOR SORTING FUNCTION
   sortByDate(direction){ }
+
 }

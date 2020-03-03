@@ -29,5 +29,16 @@
 	top: 0;
 	left: -56px;
 	z-index: 99;
-
+}
+.next-btn{
+	position: absolute;
+	top: 50vh;
+	right: 8px;
+	z-index: 98;
+}
+.prev-btn{
+	position: absolute;
+	top: 50vh;
+	left: 8px;
+	z-index: 97;
 }

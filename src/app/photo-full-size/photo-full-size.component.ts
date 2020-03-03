@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { GalleryPageComponent } from '../gallery-page/gallery-page.component';
+
 import {pictures} from '../pictures';
+
 
 
 @Component({
@@ -11,16 +12,18 @@ import {pictures} from '../pictures';
 })
 export class PhotoFullSizeComponent implements OnInit {
 	photo;
+  list;
 
   constructor(private route: ActivatedRoute) {
+    this.list = pictures;
   }
 
   ngOnInit(): void {
   	this.route.paramMap.subscribe(params => {
-      this.photo = pictures[+params.get('photoId')];
+      this.photo = this.list[+params.get('photoId')];
     });
   }
-//this.gall.listOfPictures: switch from pictures to this array
+
 
 	getDate(obj){
     var str = "";
@@ -31,5 +34,20 @@ export class PhotoFullSizeComponent implements OnInit {
       day: "numeric"
     };
     return d.toLocaleString('de-AT',options);
+  }
+
+  getIndexN(obj){
+    var i = this.list.indexOf(obj)+1;
+    if (i == this.list.length) {
+      i = 0;
+    }
+    return i;
+  }
+  getIndexP(obj){
+    var i = this.list.indexOf(obj)-1;
+    if (i < 0) {
+      i = this.list.length-1;
+    }
+    return i;
   }
 }
