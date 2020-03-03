@@ -79,10 +79,9 @@ adding = new FormGroup({
     return (total+ "$")
 };
 
-
-
    ngOnInit() {
     this.items = this.getItems();
+
   }
   onSubmit(){
 
