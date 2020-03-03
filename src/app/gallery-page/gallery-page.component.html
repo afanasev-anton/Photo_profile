@@ -1,8 +1,10 @@
 <navbar></navbar>
 	<div class="container">
-		<div class="row" *ngFor="let itm of listOfPictures">
+		<div class="row" *ngFor="let itm of listOfPictures; index as photoId">
 			<p>{{itm.takenDate}}</p>
+			<a [routerLink]="['/photos', photoId]">{{itm.pic}}</a>
 		</div>
 	</div>
+	<!--the path for Full Size Picture: 'photos/:photoID' -->
 	
 <app-footer></app-footer>
