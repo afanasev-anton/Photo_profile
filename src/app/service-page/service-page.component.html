@@ -1,3 +1,68 @@
 <navbar></navbar>
-<!-- HERE SHOULD BE CONTENT -->
+<div id="content" class="container-fluid">
+  	<div class="row m-4">
+    	<div class="card col-lg-3 col-md-5 col-sm-12 m-lg-5 m-md-4 mt-sm-2  text-center" style="width: 18rem;" *ngFor="let offers of offers ; index as offersId">
+      		<img class="card-img-top posterimg" src="assets/img/{{ offers.img }}" alt="Card Image">
+      	<div class="card-body">
+        	<h5 class="card-title">{{ offers.name }}</h5>
+        	<h4 class="card-title">Price: {{ offers.price }} $</h4>
+        	<h3>{{ offers.info}}</h3>
+        	<button class="btn btn-success m-2" (click)=" addtoCart(offers) ">Add to Cart</button>
+      	</div>
+  	</div>
+
+	<div class="container shcart">
+		<table class="table table-hover table-dark shcart">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Product</th>
+		      <th scope="col">Price</th>
+		      <th scope="col"><button class="btn btn-primary" (click)="clearCart()">Empty your Cart</button></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<tr *ngFor="let product of items; index as i">
+		      <th scope="row"></th>
+		      <td><img class="" src="assets/img/{{ product.img }}" alt="{{product.alt}}">{{ product.name }}</td>
+		      <td>{{ product.price }}$</td>
+		      <td>{{ product.qtty }}<button (click)="addMore(product)" class="plus ml-2"> ➕ </button> <button (click)="addLess(product,i)" class="minus ml-2"> ➖ </button><button class="btn btn-danger ml-2" (click)="removeItem(i)">Remove Product</button></td>
+		    </tr>
+		  </tbody>
+	    <thead >
+	      <tr class="text-center">
+	        <th id="totalprice" colspan="6">Total: {{ calcTotal() }}</th>
+	      </tr>
+	    </thead>
+		</table>
+	</div>
+	<form class="m-auto" [formGroup]="info">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>First Name</label>
+        <input type="text" class="form-control" id="inputFirst" placeholder="First Name" formControlName="firstName">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Last Name</label>
+        <input type="text" class="form-control" id="inputLast" placeholder="Last Name" formControlName="lastName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>E-Mail</label>
+      <input type="text" class="form-control" id="inputEmail" placeholder="random@gmail.com" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label>Starting Date</label>
+      <input type="date" class="form-control" id="inputDate"  formControlName="date">
+    </div>
+    <div class="form-group">
+      <label>Your Message</label>
+      <textarea type="text" class="form-control" rows="4" cols="5" id="textarea" placeholder="your message" formControlName="message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary m-2">Order</button>
+  </form>
+</div>
+
+
+
 <app-footer></app-footer>
