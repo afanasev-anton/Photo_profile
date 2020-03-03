@@ -1,17 +1,22 @@
 <div id="full-size" *ngIf="photo">
 	<!-- class="img-box"-->
-	<div>
-		<div class="row mx-0">
-			<div class="img-box col">
-				<img src="{{photo.pic}}">
+	
+		<div class="img-frame row mx-0">
+			<div class="col-12 col-md-9">
+				<button type="button" class="text-white btn close-btn" routerLink="/app-gallery-page">
+					<i class='fas fa-backspace' style="font-size:36px"></i>
+				</button>
+				<div class="img-box">
+					<img src="{{photo.pic}}">
+				</div>				
 			</div>
-			<div class="col text-white">
-				<p>Location:<br>
-				{{photo.location}}</p>
-				<p>Date:<br>
-				{{getDate(photo)}}</p>
+			<div class="col-12 col-md-3 text-white d-flex">
+				<div class="align-self-end">
+					<h5><span class="small">Location:</span><br>
+					{{photo.location}}</h5>
+					<h5><span class="small">Date:</span><br>
+					{{getDate(photo)}}</h5>
+				</div>				
 			</div>
-		</div>
-		
-	</div>	
+		</div>	
 </div>
