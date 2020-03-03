@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Faster+One|Monoton|Notable|Pacifico|Slackey&display=swap');
+.logo-font {
+	/*font-family: 'Monoton', cursive;
+	font-family: 'Audiowide', cursive;
+	font-family: 'Faster One', cursive;*/
+	font-family: 'Notable', sans-serif;
+}
