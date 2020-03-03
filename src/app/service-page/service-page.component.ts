@@ -10,6 +10,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class ServicePageComponent implements OnInit {
 offers = offers;
 items= [];
+comment= [];
 
 info = new FormGroup({
   firstName: new FormControl(''),
@@ -17,6 +18,10 @@ info = new FormGroup({
   date: new FormControl(''),
   email: new FormControl(''),
   message: new FormControl('')
+});
+adding = new FormGroup({
+  message: new FormControl(''),
+  options: new FormControl('')
 });
 
   constructor() { }
@@ -79,5 +84,11 @@ info = new FormGroup({
    ngOnInit() {
     this.items = this.getItems();
   }
+  onSubmit(){
 
+  let update = this.adding.value;
+  this.comment.push(update);
+  console.log(update);
+  this.adding.reset();
+}
 }

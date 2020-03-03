@@ -10,6 +10,31 @@
         	<button class="btn btn-success m-2" (click)=" addtoCart(offer)">Add to Cart</button>
       	</div>
   	</div>
+  <div class="card" style="width: 18rem;" *ngFor="let item of comment">
+    <div class="card-body">
+      <h5 class="card-title">Review #1<button class="btn btn-success m-2">Edit</button></h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{item.options}}</h6>
+      <p class="card-text">{{item.message}}</p>
+    </div>
+  </div>
+
+  <div class="row p-3">
+    <form id="formAdd" class="text-white" [formGroup]="adding" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="Inputselect" class="text-dark">Select Package</label>
+          <select class="" formControlName="options">
+          <option>Photoshoot</option>
+          <option>Portrait</option>
+          <option>Gallery</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="commnet" class="text-dark">Review:</label>
+          <textarea type="text" class="form-control comment" rows="5" id="type" placeholder="Add Comment" formControlName="message"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+  </div>
 
 	<div class="container shcart">
 		<table class="table table-hover table-dark shcart">
