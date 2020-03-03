@@ -2,10 +2,10 @@
 	<div class="container fluid">
   <div class="row">
 	  
-	    <button class="col-lg-2 col-sm-1 btn btn-success active mr-1 mt-4" data-filter="">All</button>
-	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" data-filter="Nature">Nature</button>
-	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" data-filter="Portrait">Portrait</button>
-	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" data-filter="City">City</button>
+	    <button class="col-lg-2 col-sm-1 btn btn-success active mr-1 mt-4" (click)="showList('')">All</button>
+	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" (click)="showList('Nature')">Nature</button>
+	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" (click)="showList('Portrait')">Portrait</button>
+	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" (click)="showList('City')">City</button>
 	  
   </div>
 
@@ -18,7 +18,7 @@
 			<option *ngFor="let loc of locations">{{loc}}</option>
 			</select>
 		</div> -->
-		<div class="row">       <!-- *ngFor="let itm of listOfPictures; index as photoId" -->
+		<div class="row">
 			<div class="col-lg-4 col-md-5 col-sm-10 mt-4 galleryimg" width="304" height="236" *ngFor="let itm of listOfPictures; index as photoId" >
 				<a [routerLink]="['/photos', photoId]">
 					<img src="{{itm.pic}}" class="img-thumbnail poster" alt="{{itm.cat}}">
@@ -26,6 +26,5 @@
 			</div>			
 		</div>
 	</div>
-	<!--the path for Full Size Picture: 'photos/:photoId' <a [routerLink]="['/photos', photoId]">{{itm.pic}}</a> -->
 	
 <app-footer></app-footer>
