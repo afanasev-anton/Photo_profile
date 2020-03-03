@@ -58,4 +58,7 @@ export class GalleryPageComponent implements OnInit {
       }
     }
   }
+
+// PLACEHOLDER FOR SORTING FUNCTION
+  sortByDate(direction){ }
 }

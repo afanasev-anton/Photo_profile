@@ -1,30 +1,45 @@
 <navbar></navbar>
-	<div class="container fluid">
-  <div class="row">
-	  
-	    <button class="col-lg-2 col-sm-1 btn btn-success active mr-1 mt-4" (click)="showList('')">All</button>
-	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" (click)="showList('Nature')">Nature</button>
-	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" (click)="showList('Portrait')">Portrait</button>
-	    <button class="col-lg-2 col-sm-1 btn btn-primary mr-1 mt-4" (click)="showList('City')">City</button>
-	  
-  </div>
-
-
-
-		<!--<div class="form-group">
-			<label for="Inputselect">Select</label>
-			<select class="form-control" >
-			<option *ngFor="let tp of types">{{tp}}</option>
-			<option *ngFor="let loc of locations">{{loc}}</option>
-			</select>
-		</div> -->
-		<div class="row">
-			<div class="col-lg-4 col-md-5 col-sm-10 mt-4 galleryimg" width="304" height="236" *ngFor="let itm of listOfPictures; index as photoId" >
-				<a [routerLink]="['/photos', photoId]">
-					<img src="{{itm.pic}}" class="img-thumbnail poster" alt="{{itm.cat}}">
-				</a>
-			</div>			
+<div class="container-fluid">
+	<!--  FILTERS and SORTING -->
+	<div class="row mt-4 no-gutters">
+		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+			<button class="filter-btn btn btn-outline-dark" (click)="showList('')">All</button>
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+			<button class="filter-btn btn btn-outline-secondary" (click)="showList('Nature')">Nature</button>
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+			<button class="filter-btn btn btn-outline-secondary" (click)="showList('Portrait')">Portrait</button>
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+			<button class="filter-btn btn btn-outline-secondary" (click)="showList('City')">City</button>
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+			<button class="filter-btn btn btn-outline-secondary" (click)="sortByDate('down')">
+				by Date <i class='fas fa-angle-double-down'></i>
+			</button>
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+			<button class="filter-btn btn btn-outline-secondary" (click)="sortByDate('up')">
+				by Date <i class='fas fa-angle-double-up'></i>
+			</button>
 		</div>
 	</div>
+	<!--  CONTENT -->
+	<div class="row mt-4 no-gutters">
+		<!--<div class="col-lg-4 col-md-5 col-sm-10 galleryimg" width="304" height="236" *ngFor="let itm of listOfPictures; index as photoId" >
+			<a [routerLink]="['/photos', photoId]">
+				<img src="{{itm.pic}}" class="img-thumbnail poster" alt="{{itm.cat}}">
+			</a>
+		</div> -->
+		<div class="col-4 p-3" *ngFor="let itm of listOfPictures; index as photoId">
+			<a [routerLink]="['/photos', photoId]">
+				<div class="img-box">
+					<img src="{{itm.pic}}">
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
 	
 <app-footer></app-footer>
