@@ -21,29 +21,38 @@ info = new FormGroup({
 
   constructor() { }
 
+  addtoCart(offer){
+    if(offer.qtty == 0){
+      offer.qtty++;
+      this.items.push(offer);
+      console.log(this.items);
+    }else {
+      for(let item of this.items){
+        (item.name == offer.name) ? item.qtty++ : null ;
+        console.log(this.items);
+      }
+    }
+
+    };
+
 	removeItem(i){
+    this.items[i].qtty = 0;
   	this.items.splice(i,1);
+
 };
 	clearCart(){
   	this.items= [];
-  	return this.items;
+    for(let item of this.offers){item.qtty = 0}
+    console.log(this.offers);
 };
 	addMore(offers){
     offers.qtty ++;
 
   };
 
-  	addtoCart(offers){
-    if(offers.qtty == 0){
-      offers.qtty++;
-      this.items.push(offers);
-    }else {
-      for(let item of this.items){
-        (item.name == offers.name) ? item.qtty++ : null ;
-      }
-    }
-
-  	};
+    getItems(){
+    return this.items;
+    };
 
   	addLess(offers,i){
     if (offers.qtty ==1){
@@ -67,7 +76,8 @@ info = new FormGroup({
 
 
 
-  ngOnInit(): void {
+   ngOnInit() {
+    this.items = this.getItems();
   }
 
 }

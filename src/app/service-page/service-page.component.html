@@ -1,13 +1,13 @@
 <navbar></navbar>
 <div id="content" class="container-fluid">
   	<div class="row m-4">
-    	<div class="card col-lg-3 col-md-5 col-sm-12 m-lg-5 m-md-4 mt-sm-2  text-center" style="width: 18rem;" *ngFor="let offers of offers ; index as offersId">
-      		<img class="card-img-top posterimg" src="assets/img/{{ offers.img }}" alt="Card Image">
+    	<div class="card col-lg-3 col-md-5 col-sm-12 m-lg-5 m-md-4 mt-sm-2  text-center" style="width: 18rem;" *ngFor="let offer of offers ; index as offersId">
+      		<img class="card-img-top posterimg" src="assets/img/{{ offer.img }}" alt="{{ offer.alt }}">
       	<div class="card-body">
-        	<h5 class="card-title">{{ offers.name }}</h5>
-        	<h4 class="card-title">Price: {{ offers.price }} $</h4>
-        	<h3>{{ offers.info}}</h3>
-        	<button class="btn btn-success m-2" (click)=" addtoCart(offers) ">Add to Cart</button>
+        	<h5 class="card-title">{{ offer.name }}</h5>
+        	<h4 class="card-title">Price: {{ offer.price }} $</h4>
+        	<h3>{{ offer.info}}</h3>
+        	<button class="btn btn-success m-2" (click)=" addtoCart(offer)">Add to Cart</button>
       	</div>
   	</div>
 
@@ -18,15 +18,15 @@
 		      <th scope="col">#</th>
 		      <th scope="col">Product</th>
 		      <th scope="col">Price</th>
-		      <th scope="col"><button class="btn btn-primary" (click)="clearCart()">Empty your Cart</button></th>
+		      <th scope="col"><button class="btn btn-primary clearing" (click)="clearCart()">Empty your Cart</button></th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		  	<tr *ngFor="let product of items; index as i">
 		      <th scope="row"></th>
-		      <td><img class="" src="assets/img/{{ product.img }}" alt="{{product.alt}}">{{ product.name }}</td>
+		      <td><img class="shitem" src="assets/img/{{ product.img }}" alt="{{product.alt}}">{{ product.name }}</td>
 		      <td>{{ product.price }}$</td>
-		      <td>{{ product.qtty }}<button (click)="addMore(product)" class="plus ml-2"> ➕ </button> <button (click)="addLess(product,i)" class="minus ml-2"> ➖ </button><button class="btn btn-danger ml-2" (click)="removeItem(i)">Remove Product</button></td>
+		      <td>{{ product.qtty }}<button (click)="addMore(product)" class="plus ml-2"> ➕ </button> <button (click)="addLess(product,i)" class="minus ml-2"> ➖ </button><button class="btn btn-danger ml-2 remove" (click)="removeItem(i)">Remove Product</button></td>
 		    </tr>
 		  </tbody>
 	    <thead >
