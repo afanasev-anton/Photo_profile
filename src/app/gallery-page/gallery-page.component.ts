@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {pictures} from '../pictures';
 import { GalleryResizeService } from '../gallery-resize.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class GalleryPageComponent implements OnInit {
 	listOfPictures = pictures;
 	/*types = [];
 	locations = [];*/
-
+  searchText;
   constructor(private lst: GalleryResizeService) {
     lst.addToList(pictures);
     /*for (var i = 0; i < this.listOfPictures.length; i++) {

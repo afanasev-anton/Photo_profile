@@ -25,6 +25,7 @@
 			</button>
 		</div>
 	</div>
+	<input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a picture by category">
 	<!--  CONTENT -->
 	<div class="row mt-4 no-gutters">
 		<!--<div class="col-lg-4 col-md-5 col-sm-10 galleryimg" width="304" height="236" *ngFor="let itm of listOfPictures; index as photoId" >
@@ -32,7 +33,7 @@
 				<img src="{{itm.pic}}" class="img-thumbnail poster" alt="{{itm.cat}}">
 			</a>
 		</div> -->
-		<div class="col-4 p-lg-3 p-xs-4 p-md-4 p-sm-4 posters" *ngFor="let itm of listOfPictures; index as photoId">
+		<div class="col-4 p-lg-3 p-xs-4 p-md-4 p-sm-4 posters" *ngFor="let itm of listOfPictures | filter:searchText; index as photoId">
 			<a [routerLink]="['/photos', photoId]">
 				<div class="img-box img-fluid">
 					<img src="{{itm.pic}}">
