@@ -32,9 +32,9 @@
 				<img src="{{itm.pic}}" class="img-thumbnail poster" alt="{{itm.cat}}">
 			</a>
 		</div> -->
-		<div class="col-4 p-3" *ngFor="let itm of listOfPictures; index as photoId">
+		<div class="col-4 p-lg-3 p-xs-4 p-md-4 p-sm-4 posters" *ngFor="let itm of listOfPictures; index as photoId">
 			<a [routerLink]="['/photos', photoId]">
-				<div class="img-box">
+				<div class="img-box img-fluid">
 					<img src="{{itm.pic}}">
 				</div>
 			</a>
