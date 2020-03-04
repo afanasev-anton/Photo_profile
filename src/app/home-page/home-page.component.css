@@ -1,7 +1,7 @@
 .special{
 	position: absolute;
-	margin-top: 250px;
-	z-index: 1;
+	top: 66vh;
+	z-index: 99;
 }
 img{
 	max-width: 100%;
@@ -11,8 +11,9 @@ body{
 	height: 100%;
 }
 .bg{
-	display: grid;
-    height: 100%;
+	display: flex;
+	justify-content: center;
+    height: 100vh;
 }
 .bgimages{
 	height: 100vh;
@@ -22,12 +23,13 @@ button:hover{
 }
 .author{
 	position: absolute;
+	top: 30vh;
 	z-index: 1;
 }
 .social{
 	position: absolute;
-	z-index: 1;
-	margin-top: 330px;
+	z-index: 98;
+	top: 50vh;
 }
 .fbicon{
 	color: rgba(255, 255, 255, 1.0);
@@ -55,3 +57,5 @@ ul{
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   	filter: grayscale(100%);
 }
+
+.menu-btn {width: 100%;}
