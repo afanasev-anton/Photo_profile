@@ -25,7 +25,10 @@
 			</button>
 		</div>
 	</div>
-	<input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a picture by category">
+	<div class="row no-gutters p-3">
+		<input class="form-control fas" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#xf002;  Start searching for a picture by tags">
+	</div>
+	
 	<!--  CONTENT -->
 	<div class="row mt-4 no-gutters">
 		<!--<div class="col-lg-4 col-md-5 col-sm-10 galleryimg" width="304" height="236" *ngFor="let itm of listOfPictures; index as photoId" >
