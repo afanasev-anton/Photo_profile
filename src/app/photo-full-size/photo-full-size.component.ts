@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
+import { GalleryResizeService } from '../gallery-resize.service';
 
-import {pictures} from '../pictures';
+//import {pictures} from '../pictures';
 
 
 
@@ -14,8 +15,8 @@ export class PhotoFullSizeComponent implements OnInit {
 	photo;
   list;
 
-  constructor(private route: ActivatedRoute) {
-    this.list = pictures;
+  constructor(private route: ActivatedRoute,private lst: GalleryResizeService) {
+    this.list = lst.getList();
   }
 
   ngOnInit(): void {

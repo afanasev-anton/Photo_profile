@@ -4,6 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GalleryResizeService {
+	list = [];
 
-  constructor() { }
+  constructor() {}
+
+  addToList (arr){
+  	this.list = arr;
+  }
+
+  getList(){
+  	return this.list;
+  }
 }

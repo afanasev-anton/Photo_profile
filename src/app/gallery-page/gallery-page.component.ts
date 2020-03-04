@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {pictures} from '../pictures';
+import { GalleryResizeService } from '../gallery-resize.service';
 
 
 @Component({
@@ -9,11 +10,12 @@ import {pictures} from '../pictures';
 })
 export class GalleryPageComponent implements OnInit {
 	listOfPictures = pictures;
-	types = [];
-	locations = [];
+	/*types = [];
+	locations = [];*/
 
-  constructor() {
-    for (var i = 0; i < this.listOfPictures.length; i++) {
+  constructor(private lst: GalleryResizeService) {
+    lst.addToList(pictures);
+    /*for (var i = 0; i < this.listOfPictures.length; i++) {
         if (!this.types.includes(this.listOfPictures[i].cat)) {
           this.types.push(this.listOfPictures[i].cat);
         }
@@ -23,7 +25,7 @@ export class GalleryPageComponent implements OnInit {
         if (!this.types.includes(this.listOfPictures[i].location)) {
           this.types.push(this.listOfPictures[i].location);
         }
-    }
+    }*/
   }
 
   ngOnInit(): void {
@@ -31,9 +33,11 @@ export class GalleryPageComponent implements OnInit {
 
   showList(str){
     if (str == "") {
+      this.lst.addToList(pictures);
       this.listOfPictures = pictures;
     } else {
       this.listOfPictures = [];
+
       switch (str) {
         case "Nature":
           for (var i = 0; i < pictures.length; i++) {
@@ -41,6 +45,7 @@ export class GalleryPageComponent implements OnInit {
               this.listOfPictures.push(pictures[i]);
             }
           }
+          this.lst.addToList(this.listOfPictures);
           break;
         case "City":
           for (var i = 0; i < pictures.length; i++) {
@@ -48,6 +53,7 @@ export class GalleryPageComponent implements OnInit {
               this.listOfPictures.push(pictures[i]);
             }
           }
+          this.lst.addToList(this.listOfPictures);
           break;
         case "Portrait":
           for (var i = 0; i < pictures.length; i++) {
@@ -55,13 +61,12 @@ export class GalleryPageComponent implements OnInit {
               this.listOfPictures.push(pictures[i]);
             }
           }
+          this.lst.addToList(this.listOfPictures);
           break;
       }
     }
   }
-  getlistOfPictures(){
-    return this.listOfPictures;
-  }
+  
 // PLACEHOLDER FOR SORTING FUNCTION
   sortByDate(direction){ }
 
