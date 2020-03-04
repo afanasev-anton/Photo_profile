@@ -5,9 +5,9 @@
 	justify-content: center;
 	align-items: center;
 }
-
 .img-frame {
 	width: 90vw;
+	/*height: 90vh;*/
 }
 .img-box {
 	width: 100%;
@@ -17,28 +17,56 @@
 	justify-content: center;
 	background-color: #011f24;
 	overflow: hidden;
-
 }
-
 .img-box img {
 	height: 100%;
-	/*max-width: 100%;*/
 }
 .close-btn{
 	position: absolute;
 	top: 0;
-	left: -56px;
+	left: 15px;
 	z-index: 99;
+	border: 2px solid white;
+	background-color: black;
 }
 .next-btn{
 	position: absolute;
 	top: 50vh;
-	right: 8px;
+	right: 2px;
 	z-index: 98;
 }
 .prev-btn{
 	position: absolute;
 	top: 50vh;
-	left: 8px;
+	left: 2px;
 	z-index: 97;
+}
+/* **** RESPONSIVE FOR XS( <= 576px ) **** */
+@media only screen and (max-width: 576px) {
+	.img-frame{
+		width: 98vw;
+	}
+	.img-box {
+		width: 100%;
+		height: auto;
+	}
+	.img-box img {
+		height: auto;
+		width: 100%;
+	}
+	.next-btn{
+		opacity: 0.7;
+	}
+	.prev-btn{
+		opacity: 0.7;
+	}
+}
+/* **** RESPONSIVE FOR md( >576px <= 768px) **** */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+	.img-frame{
+		width: 96vw;
+	}
+	.img-box {
+		height: 60vw;
+	}
 }
