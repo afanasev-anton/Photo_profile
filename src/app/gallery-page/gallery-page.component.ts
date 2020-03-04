@@ -32,9 +32,10 @@ export class GalleryPageComponent implements OnInit {
   }
 
   showList(str){
-    if (str == "") {
-      this.lst.addToList(pictures);
+    if (str == "all") {
+      
       this.listOfPictures = pictures;
+      this.lst.addToList(this.listOfPictures);
     } else {
       this.listOfPictures = [];
 
@@ -68,6 +69,27 @@ export class GalleryPageComponent implements OnInit {
   }
   
 // PLACEHOLDER FOR SORTING FUNCTION
-  sortByDate(direction){ }
+  sortByDate(direction){
+    switch (direction) {
+      case "up":
+        var arr = this.listOfPictures;
+        for (var i = 0; i < arr.length; i++) {
+          arr[i].takenDate = new Date(arr[i].takenDate);
+        }
+        arr.sort(function(a, b){return a.takenDate - b.takenDate});
+        console.log(arr);
+        this.listOfPictures = arr;
+        break;
+      case "down":
+        var arr = this.listOfPictures;
+        for (var i = 0; i < arr.length; i++) {
+          arr[i].takenDate = new Date(arr[i].takenDate);
+        }
+        arr.sort(function(a, b){return b.takenDate - a.takenDate});
+        console.log(arr);
+        this.listOfPictures = arr;
+        break;
+    }
+  }
 
 }
