@@ -84,10 +84,13 @@ adding = new FormGroup({
 
   }
   onSubmit(){
+    this.clearCart();
+    this.info.reset();
 
+  /* ***** it was for reviews ****
   let update = this.adding.value;
   this.comment.push(update);
   console.log(update);
-  this.adding.reset();
-}
+  this.adding.reset();*/
+  }
 }

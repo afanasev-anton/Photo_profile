@@ -1,14 +1,15 @@
 <navbar></navbar>
 <div id="content" class="container-fluid">
   	<div class="row m-4">
-    	<div class="card col-lg-3 col-md-5 col-sm-12 m-lg-5 m-md-4 mt-sm-2  text-center" style="width: 18rem;" *ngFor="let offer of offers ; index as offersId">
+    	<div class="card col-lg-3 col-md-5 col-sm-12 m-lg-5 m-md-4 mt-sm-2 text-center d-flex" style="width: 18rem;" *ngFor="let offer of offers ; index as offersId">
       		<img class="card-img-top posterimg" src="assets/img/{{ offer.img }}" alt="{{ offer.alt }}">
       	<div class="card-body">
         	<h5 class="card-title">{{ offer.name }}</h5>
         	<h4 class="card-title">Price: {{ offer.price }} $</h4>
         	<h3>{{ offer.info}}</h3>
-        	<button class="btn btn-success m-2" (click)=" addtoCart(offer)">Add to Cart</button>
+        	<!--<button class="btn btn-success m-2" (click)=" addtoCart(offer)">Add to Cart</button>-->
       	</div>
+        <button class="btn btn-success mx-auto my-2 align-self-end" (click)=" addtoCart(offer)">Add to Cart</button>
   	</div>
   <div class="card" style="width: 18rem;" *ngFor="let item of comment">
     <div class="card-body">
@@ -61,7 +62,7 @@
 	    </thead>
 		</table>
 	</div>
-  	<form class="m-auto" [formGroup]="info">
+  	<form class="m-auto" [formGroup]="info" (ngSubmit)="onSubmit()">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label>First Name</label>
