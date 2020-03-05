@@ -2,24 +2,24 @@
 <div class="container-fluid">
 	<!--  FILTERS and SORTING -->
 	<div class="row mt-4 no-gutters">
-		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+		<div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 mx-auto">
 			<button class="filter-btn btn btn-outline-dark" (click)="showList('all')">All</button>
 		</div>
-		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+		<div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 mx-auto">
 			<button class="filter-btn btn btn-outline-secondary" (click)="showList('Nature')">Nature</button>
 		</div>
-		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+		<div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 mx-auto">
 			<button class="filter-btn btn btn-outline-secondary" (click)="showList('Portrait')">Portrait</button>
 		</div>
-		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+		<div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 mx-auto">
 			<button class="filter-btn btn btn-outline-secondary" (click)="showList('City')">City</button>
 		</div>
-		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+		<div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 mx-auto">
 			<button class="filter-btn btn btn-outline-secondary" (click)="sortByDate('down')">
 				by Date <i class='fas fa-angle-double-down'></i>
 			</button>
 		</div>
-		<div class="col-12 col-sm-6 col-md-2 p-3 mx-auto">
+		<div class="col-12 col-sm-6 col-md-4 col-lg-2 p-3 mx-auto">
 			<button class="filter-btn btn btn-outline-secondary" (click)="sortByDate('up')">
 				by Date <i class='fas fa-angle-double-up'></i>
 			</button>
@@ -31,14 +31,9 @@
 	
 	<!--  CONTENT -->
 	<div class="row mt-4 no-gutters">
-		<!--<div class="col-lg-4 col-md-5 col-sm-10 galleryimg" width="304" height="236" *ngFor="let itm of listOfPictures; index as photoId" >
+		<div class="col-6 col-sm-4 p-lg-3 p-md-2 p-1 posters" *ngFor="let itm of listOfPictures | filter:searchText; index as photoId">
 			<a [routerLink]="['/photos', photoId]">
-				<img src="{{itm.pic}}" class="img-thumbnail poster" alt="{{itm.cat}}">
-			</a>
-		</div> -->
-		<div class="col-4 p-lg-3 p-xs-4 p-md-4 p-sm-4 posters" *ngFor="let itm of listOfPictures | filter:searchText; index as photoId">
-			<a [routerLink]="['/photos', photoId]">
-				<div class="img-box img-fluid">
+				<div class="img-box">
 					<img src="{{itm.pic}}" alt="{{itm.tags}}/{{itm.location}}">
 				</div>
 			</a>

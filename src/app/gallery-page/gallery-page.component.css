@@ -1,8 +1,3 @@
-.poster {
-	height: 40vh;
-	width: 60vh;
-}
-
 .filter-btn{
 	width: 100%;
 }
@@ -23,8 +18,19 @@
 	-webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
 	filter: grayscale(0);
 }
-@media only screen and (max-width: 500px){
-	.posters{
-		padding: 0.5rem !important;
+@media only screen and (max-width: 576px) {
+	.img-box{
+		width: 44vw;
+		height: 44vw;
+	}
+	.img-box img {
+		-webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+		filter: grayscale(0);
+	}
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+	.img-box img {
+		-webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+		filter: grayscale(0);
 	}
 }
