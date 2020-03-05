@@ -1,26 +1,9 @@
-.special{
+.special {
 	position: absolute;
 	top: 66vh;
 	z-index: 99;
 }
-img{
-	max-width: 100%;
-    height: 100vh;
-}
-body{
-	height: 100%;
-}
-.bg{
-	display: flex;
-	justify-content: center;
-    height: 100vh;
-}
-.bgimages{
-	height: 100vh;
-}
-button:hover{
-	color: black !important;
-}
+.menu-btn {width: 100%;}
 .author{
 	position: absolute;
 	top: 30vh;
@@ -31,6 +14,33 @@ button:hover{
 	z-index: 98;
 	top: 50vh;
 }
+/*img{
+	max-width: 100%;
+    height: 100vh;
+}*/
+/*body{
+	height: 100%;
+}*/
+.bg{
+	display: flex;
+	justify-content: center;
+    height: 100vh;
+    background-color: black;
+}
+.bgimages {
+	height: 100vh;
+	overflow: hidden;
+}
+.caritem{
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(100%);
+  	height: 100%;
+}
+
+.menu-btn:hover{
+	color: black !important;
+}
+
 .fbicon{
 	color: rgba(255, 255, 255, 1.0);
 }
@@ -49,13 +59,5 @@ button:hover{
 .twicon:hover{
 	color: rgba(0, 0, 0, 0.8);
 }
-ul{
-	display:  flex !important;
-	flex-direction: row;
-}
-.caritem{
-	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  	filter: grayscale(100%);
-}
 
-.menu-btn {width: 100%;}
+
