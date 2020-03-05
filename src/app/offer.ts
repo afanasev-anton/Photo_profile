@@ -5,8 +5,7 @@ export const
     price: 330,
     alt: "Icon provided by www.flaticon.com/authors/pixel-perfect",
     qtty: 0,
-    packagename: "Package Name",
-    info: "Random Text."
+    info: "Photoshoot with 20 pictures"
   },
   {
     img: 'yearbook.svg',
@@ -14,8 +13,7 @@ export const
     price: 330,
     alt: "Icon provided by www.flaticon.com/authors/pixel-perfect",
     qtty: 0,
-    packagename: "Package Name",
-    info: "Random text for now"
+    info: "Mutliple Portrait Shots"
   },
   {
     img: 'gallery.svg',
@@ -23,6 +21,5 @@ export const
     price: 330,
     alt: "Icon provided by www.flaticon.com/authors/pixel-perfect",
     qtty: 0,
-    packagename: "Package Name",
     info: "Full-on Photoshoot"
   },]
